@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Billo Battle Zone</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header>
+  <button class="mobile-menu-btn">☰</button>
+  <h2><span data-app-name></span></h2>
+</header>
+
+<aside class="sidebar">
+  <nav>
+    <a class="nav-item" href="#">Dashboard</a>
+    <a class="nav-item" href="#">Tournaments</a>
+    <a class="nav-item" href="#">Wallet</a>
+  </nav>
+</aside>
+
+<main>
+
+<!-- LIVE MATCH -->
+<h3>
+  <span class="live-now" onclick="openLive()">LIVE NOW</span>
+</h3>
+
+<!-- GAME MODE -->
+<div id="modeBox"></div>
+
+<!-- WALLET -->
+<section>
+  <h3>Wallet</h3>
+
+  <select id="payMethod">
+    <option value="">Select Method</option>
+    <option>bKash</option>
+    <option>Nagad</option>
+    <option>Rocket</option>
+  </select>
+
+  <input id="amount" placeholder="Amount">
+  <input id="sender" placeholder="Sender Number">
+  <input id="txn" placeholder="Transaction ID">
+
+  <button onclick="submitDeposit()">Add Money</button>
+
+  <hr>
+
+  <h4>Withdraw</h4>
+  <select id="wdMethod">
+    <option>bKash</option>
+    <option>Nagad</option>
+    <option>Rocket</option>
+  </select>
+  <input id="wdNumber" placeholder="Your Number">
+  <input id="wdAmount" placeholder="Amount">
+  <button onclick="requestWithdraw()">Withdraw</button>
+</section>
+
+</main>
+
+<!-- CORE -->
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="auth.js"></script>
+<script type="module" src="app-config.js"></script>
+<script type="module" src="branding-fix.js"></script>
+
+<!-- WALLET -->
+<script type="module" src="wallet-core.js"></script>
+<script type="module" src="bd-payment.js"></script>
+<script type="module" src="withdraw.js"></script>
+
+<!-- GAME -->
+<script type="module" src="game-modes.js"></script>
+<script type="module" src="render-matches.js"></script>
+
+<!-- LIVE -->
+<script src="live-view.js"></script>
+
+<!-- LANGUAGE -->
+<script type="module" src="i18n.js"></script>
+
+<!-- MOBILE -->
+<script src="mobile-sidebar-fix.js"></script>
+<link rel="stylesheet" href="mobile-sidebar-fix.css">
+
+</body>
+</html>
